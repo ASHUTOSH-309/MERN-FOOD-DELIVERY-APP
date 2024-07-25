@@ -39,7 +39,7 @@ const UserProfileForm = ({ onSave, isLoading }: Props) => {
     });
 
 
-return(
+    return (
         <Form {...form}>
             <form onSubmit={form.handleSubmit(onSave)} className="space-y-4 bg-gray-50 rounded-lg md:p-10">
 
@@ -51,91 +51,80 @@ return(
                 </div>
 
 
-                <FormField control={form.control} name="email" render={({ field }) => {
+                <FormField control={form.control} name="email" render={({ field }) => (
 
-                    return (
-                        <FormItem>
-                            <FormLabel>Email</FormLabel>
-                            <FormControl>
-                                <Input {...field} defaultValue="" className="bg-white" />
-                            </FormControl>
-                        </FormItem>
-                    )
 
-                }}
+                    <FormItem>
+                        <FormLabel>Email</FormLabel>
+                        <FormControl>
+                            <Input {...field} disabled  className="bg-white" />
+                        </FormControl>
+                    </FormItem>
+
+
+                )}
                 />
 
 
-                <FormField control={form.control}
-                    name="name"
-                    render={({ field }) => {
+                <FormField control={form.control} name="name" render={({ field }) => (
 
-                        return (
-                            <FormItem>
-                                <FormLabel>Name</FormLabel>
-                                <FormControl>
-                                    <Input {...field} defaultValue="" className="bg-white" />
-                                </FormControl>
-                                <FormMessage />
-                            </FormItem>
-                        )
 
-                    }}
+                    <FormItem>
+                        <FormLabel>Name</FormLabel>
+                        <FormControl>
+                            <Input {...field}  className="bg-white" />
+                        </FormControl>
+                        <FormMessage />
+                    </FormItem>
+
+
+                )}
                 />
 
                 <div className="flex flex-col md:flex-row gap-4">
 
-                    <FormField control={form.control}
-                        name="addressLine1"
-                        render={({ field }) => {
+                    <FormField control={form.control} name="addressLine1" render={({ field }) => (
 
-                            return (
-                                <FormItem className="flex-1">
-                                    <FormLabel>Address Line 1</FormLabel>
-                                    <FormControl>
-                                        <Input {...field} defaultValue="" className="bg-white" />
-                                    </FormControl>
-                                    <FormMessage />
-                                </FormItem>
-                            )
 
-                        }}
+                        <FormItem className="flex-1">
+                            <FormLabel>Address Line 1</FormLabel>
+                            <FormControl>
+                                <Input {...field}  className="bg-white" />
+                            </FormControl>
+                            <FormMessage />
+                        </FormItem>
 
+
+                    )}
                     />
 
-                    <FormField control={form.control}
-                        name="city"
-                        render={({ field }) => {
+                    <FormField control={form.control} name="city" render={({ field }) => (
 
-                         return(
-                                <FormItem className="flex-1">
-                                    <FormLabel>City</FormLabel>
-                                    <FormControl>
-                                        <Input {...field}  defaultValue="" className="bg-white" />
-                                    </FormControl>
-                                    <FormMessage />
-                                </FormItem>
-                         )
 
-                        }}
+                        <FormItem className="flex-1">
+                            <FormLabel>City</FormLabel>
+                            <FormControl>
+                                <Input {...field}  className="bg-white" />
+                            </FormControl>
+                            <FormMessage />
+                        </FormItem>
 
+
+                    )}
                     />
-                    <FormField control={form.control}
-                        name="country"
-                        render={({ field }) => {
+                    <FormField control={form.control} name="country" render={({ field }) => (
 
-                           return(
-                                <FormItem className="flex-1">
-                                    <FormLabel>Country</FormLabel>
-                                    <FormControl>
-                                        <Input {...field} defaultValue="" className="bg-white" />
-                                    </FormControl>
-                                    <FormMessage />
-                                </FormItem>
-                            
-                           )
-                        }}
 
+                        <FormItem className="flex-1">
+                            <FormLabel>Country</FormLabel>
+                            <FormControl>
+                                <Input {...field}  className="bg-white" />
+                            </FormControl>
+                            <FormMessage />
+                        </FormItem>
+
+
+                    )}
                     />
 
 
@@ -144,18 +133,18 @@ return(
 
 
                 {isLoading ? (<LoadingButton />
-                 ) : (
+                ) : (
                     <Button type="submit" className="bg-orange-500">Submit</Button>
-                    
-                    )}
+
+                )}
 
 
 
             </form>
         </Form>
-)
+    )
 
-    
+
 }
 
 
